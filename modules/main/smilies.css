@@ -1,0 +1,6 @@
+.smiley {
+	width: 15px;
+	height: 15px;
+	background: transparent url(/img/module/main/smilies.png) no-repeat;
+	display: inline-block;
+}

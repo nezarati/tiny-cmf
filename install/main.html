@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+<head>
+	<a:block name="head" />
+	<meta name="robots" content="index, follow" />
+	<meta name="title" content="{@document.title}" />
+	<meta name="author" content="Administrator" />
+	<title>{@document.pageTitle}</title>
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<link href="http://templates.joomlart.com/ja_zibal/templates/ja_zibal/ja_menus/ja_splitmenu/ja.splitmenu.css" rel="stylesheet" type="text/css" />
+	<link href="http://templates.joomlart.com/ja_zibal/templates/ja_zibal/css/template.css" rel="stylesheet" type="text/css" />
+	<link href="" rel="stylesheet" type="text/css" id="switchStyle" />
+	<link href="/style.css" rel="stylesheet" type="text/css" />
+	<script language="javascript" type="text/javascript" src="/script.js"></script>
+	<!--[if lte IE 6]>
+	<style type="text/css">
+	.clearfix {	height: 1%;}
+	</style>
+	<![endif]-->
+
+	<!--[if IE 7]>
+	<style type="text/css">
+	.clearfix {	display: inline-block;}
+	</style>
+	<![endif]-->
+
+	<!--[if gt IE 7]>
+	<link href="http://templates.joomlart.com/ja_zibal/templates/ja_zibal/css/ie8.css" rel="stylesheet" type="text/css" />
+	<![endif]-->
+</head>
+
+<body id="bd" class="wide fs3 {@document.direction}">
+
+<div id="ja-wrapper">
+
+<a name="Top" id="Top"></a>
+<a title="Skip to content" href="#Content" style="display: none;">Skip to content</a>
+
+	<!-- BEGIN: HEADER -->
+	<div id="ja-header-wrap1">
+		<div id="ja-header-wrap2">
+			<div id="ja-header-wrap3">
+				<div id="ja-header" class="clearfix">
+					<div id="loading">Loading...</div>
+					<div id="logo">
+						<div class="title">{@document.title}</div>
+						<div class="description">{@document.description}</div>
+					</div>
+					<div id="ja-search">
+						<form onsubmit="return $.Search.quick(this)">
+							<div class="search">
+								<input name="arg[query]" maxlength="20" alt="Search" class="inputbox" type="text" size="20" value="search..." />
+							</div>
+						</form>
+					</div>
+					<div id="ja-usertoolswrap">
+						<div id="ja-usertools">
+							<ul action="screen">
+								<li style="background-position: 0 -15px" title="narrow screen" data="narrow"></li>
+								<li style="background-position: -12px -15px" title="wide screen" data="wide"></li>
+							</ul>
+							<ul action="fontSize">
+								<li style="background-position: -84px -12px; height: 12px" title="Decrease font size" size="-1"></li>
+								<li style="background-position: -96px 0; height: 12px" title="Default font size" size="0"></li>
+								<li style="background-position: -84px 0; height: 12px" title="Increase font size" size="1"></li>
+							</ul>
+							<ul action="style">
+								<li style="background-position: -24px -15px" title="default color" color="default"></li>
+								<li style="background-position: -36px -15px" title="black color" color="black"></li>
+								<li style="background-position: -48px -15px" title="cyan color" color="cyan"></li>
+								<li style="background-position: -60px -15px" title="green color" color="green"></li>
+								<li style="background-position: -72px -15px" title="red color" color="red"></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!-- END: HEADER -->
+	<!-- BEGIN: SUBHEADER -->
+	<div id="ja-sh-wrap1">
+		<div id="ja-sh-wrap2">
+			<div id="ja-sh-wrap3">
+				<div id="ja-sh" class="clearfix" style="background:url('http://templates.joomlart.com/ja_zibal/templates/ja_zibal/images/default/sh01.jpg') no-repeat top right; ">
+
+					<div id="ja-topnav">
+
+						<!-- BEGIN: MAIN NAVIGATION -->
+						<div id="ja-mainnav" class="clearfix">
+							<div id="ja-splitmenu" class="mainlevel clearfix"></div>
+						</div>
+						<!-- END: MAIN NAVIGATION -->
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END: SUBHEADER -->
+
+	<!-- BEGIN: PATHWAY -->
+	<div id="ja-pathway-wrap1">
+		<div id="ja-pathway-wrap2">
+			<div id="ja-pathway-wrap3">
+				<div id="ja-pathway"></div>
+			</div>
+		</div>
+
+	</div>
+	<!-- END: PATHWAY -->
+
+	<!-- BEGIN: MAIN CONTENT -->
+	<div id="ja-main-wrap1">
+		<div id="ja-main-wrap2">
+			<div id="ja-main-wrap3">
+				<div id="ja-main" class="clearfix">
+
+					<!-- BEGIN: CONTENT -->
+					<div id="ja-content">
+						<div id="ja-mainbody">
+							<div class="componentheading" id="pageTitle">{@document.pageTitle}</div>
+							<div id="content"><a:block name="content"/></div>
+<!-- BEGIN: SPOTLIGHT -->
+<div id="ja-spotlight" class="clearfix">
+</div>
+<!-- END: SPOTLIGHT -->
+						</div>
+					</div>
+					<!-- END: CONTENT -->
+
+					<!-- BEGIN: COLUMN -->
+					<a:block name="sidebar">
+					<div id="ja-sidecol">
+						<a:loop iterator="widgets" current="widget">
+						<div id="ja-subnav">
+							<h3 class="show">{@widget.title}</h3>
+							<div id="module-{@widget.module}" class="sublevel">
+								{@widget.content}
+							</div>
+						</div>
+						</a:loop>
+					</div>
+					</a:block>
+					<br />
+					<!-- END: COLUMN -->
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END: MAIN CONTENT -->
+
+	<!-- BEGIN: FOOTER -->
+	<div id="ja-footer-wrap1">
+		<div id="ja-footer-wrap2">
+			<div id="ja-footer-wrap3">
+				<div id="ja-footer">
+
+					<ul id="mainlevel-nav">
+					</ul>
+
+					<div id="ja-cert">
+						<a href="http://jigsaw.w3.org/css-validator/validator?uri={@document.url}" target="_blank" title="Our site is valid CSS">
+							<img src="http://templates.joomlart.com/ja_zibal/templates/ja_zibal/images/butcssdefault.gif" alt="Our site is valid CSS" />
+						</a>
+						<a href="http://validator.w3.org/check/referer" target="_blank" title="Our site is valid XHTML 1.0 Transitional">
+							<img src="http://templates.joomlart.com/ja_zibal/templates/ja_zibal/images/butxhtmldefault.gif" alt="Our site is valid XHTML 1.0 Transitional" />
+						</a>
+					</div>
+
+					<p id="ja-bottomline">
+						Copyright © 2005 - 2010 {@document.shortTitle}.
+						Designed by <a href="http://www.joomlart.com">JoomlArt.com</a><br />
+						Powered by <a href="http://www.chonoo.com">Chonoo!</a>
+					</p>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- END: FOOTER -->
+
+</div>
+</body>
+</html>

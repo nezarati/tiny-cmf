@@ -1,0 +1,43 @@
+.pagination {
+	clear: both;
+	display: inline-block;
+}
+
+.pagination a {
+	color: #000000;
+	text-decoration: none;
+	line-height: 17px;
+	padding: 0 5px;
+}
+
+ul.pagination {
+	list-style: none;
+}
+
+.pagination li {
+	border: 1px solid #CCCCCC;
+	text-align: center;
+	min-width: 17px;
+	float: left;
+	margin-left: 5px;
+}
+.rtl .pagination li {
+	float: right;
+	margin-right: 5px;
+}
+
+
+.pagination .ellipsis {
+	border: none;
+}
+
+.pagination .active a,.pagination li:hover>a {
+	background: #4F89D2 none repeat scroll 0 0;
+	display: block;
+	color: #ffffff;
+}
+
+.pagination .active a {
+	cursor: default;
+	font-weight: bold;
+}

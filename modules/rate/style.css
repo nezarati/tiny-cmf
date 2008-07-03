@@ -1,0 +1,24 @@
+.rate {
+	display: inline;
+}
+.rate span {
+	display: inline-block;
+	background: url(/img/module/rate/ratings.png) no-repeat;
+	width: 12px;
+	height: 11px
+}
+.rate .off {
+	background-position: 0 0;
+}
+.rate .over {
+	background-position: -12px 0;
+}
+.rate .on {
+	background-position: -24px 0;
+}
+.rate .half {
+	background-position: -36px 0;
+}
+.rtl .rate .half {
+	background-position: -48px 0;
+}

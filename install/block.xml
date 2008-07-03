@@ -1,0 +1,147 @@
+<blocks>
+	<blog><![CDATA[
+<a:block name="blog">
+<table class="blog" cellpadding="0" cellspacing="0">
+	<a:loop iterator="posts" current="post">
+	<tr id="post-{@post.id}">
+		<td valign="top">
+		
+			<table class="contentpaneopen">
+				<tr>
+					<td class="contentheading" width="100%">
+						<a href="{@post.url}" onclick="return _$(this)">{@post.title}</a>
+					</td>
+					<a:block name="taxonomy">
+						<td align="right" width="100%" class="buttonheading">
+							<a href="{@taxonomy.url}" onclick="return _$(this)" title="Term">{@taxonomy.term}</a>
+						</td>
+					</a:block>
+					<a:block name="comment">
+						<td align="right" width="100%" class="buttonheading">
+							<a href="javascript:void(0)" onclick="this.href='{@comment.url}';return $(this).dialog({width: 450})">Comment({@comment.count})</a>
+						</td>
+					</a:block>
+					<a:block name="rate">
+						<td align="right" width="100%" class="buttonheading">
+							{@rate.rating}
+						</td>
+					</a:block>
+				</tr>
+			</table>
+			
+			<table class="contentpaneopen">
+				<a:block name="author">
+					<tr>
+						<td width="70%" valign="top" colspan="2">
+							<span class="small">{_("Written by :author", {"author": @author.name})}</span>
+						</td>
+					</tr>
+				</a:block>
+				<tr>
+					<td valign="top" colspan="2" class="createdate">{date(@post.published, "long")}</td>
+				</tr>
+				<tr>
+					<td valign="top" colspan="2">
+						<a:block name="image">
+							<div class="mosimage" align="center">
+								<img src="{@image.url}" hspace="6" alt="{@post.title}" border="0" />
+							</div>
+						</a:block>
+						{@post.content}
+					</td>
+				</tr>
+				<a:block name="modified">
+				<tr>
+					<td colspan="2" class="modifieddate">
+						{_("Last Updated on :time", {"time": date(@post.modified, "long")})}
+					</td>
+				</tr>
+				</a:block>
+				<a:block name="continue">
+					<tr>
+						<td colspan="2">
+							<a href="{@post.url}" class="readon" onclick="return _$(this)">{_("Read more...")}</a>
+						</td>
+					</tr>
+				</a:block>
+			</table>
+			
+			<span class="article_separator"></span>
+		</td>
+	</tr>
+	</a:loop>
+	<tr>
+		<td valign="top" align="center">
+			<a:block name="pagination" />
+		</td>
+	</tr>
+	<a:block name="recent">
+	<tr>
+		<td valign="top">
+			<div class="blog_more">
+				<div>
+					<strong>{_("More Articles...")}</strong>
+				</div>
+				<ul>
+					<a:loop iterator="posts" current="post">
+					<li>
+						<a class="blogsection" href="{@post.url}">{@post.title}</a>
+					</li>
+					</a:loop>
+				</ul>
+			</div>
+		</td>
+	</tr>
+	</a:block>
+</table>
+</a:block>
+	]]></blog>
+	<comment><![CDATA[
+<div style="overflow: auto; max-height: 600px">
+<a:block name="comment">
+<div id="comment-{@comment.service}-{@comment.node}">
+<a:loop iterator="entries" current="entry">
+<div class="comment">
+	<div class="top">
+		{@entry.action}
+		<div class="detail"><div class="avatar" style="background-image: url(http://www.gravatar.com/avatar/{@entry.email}?s=25&d=http://www.chonoo.com/img/module/comment/avatar.png)"></div>{@entry.detail}</div>
+	</div>
+	<div class="content">{@entry.content}</div>
+</div>
+</a:loop>
+<div class="bar">
+	<a:block name="pagination" />
+	<ul class="comment-img">
+		<li class="new" onclick="$.Comment.add('{@comment.service}', {@comment.node})" title="Post a Comment"></li>
+	</ul>
+</div>
+</div>
+</a:block>
+</div>
+	]]></comment>
+	<search><![CDATA[
+<a:block name="search">
+	<a:loop iterator="modules" current="module">
+	<fieldset id="{@module.elementId}">
+		<legend>{@module.name}</legend>
+		<a:loop iterator="results" current="result">
+		<div class="comment">
+			<div class="top">
+				<div class="detail">
+					<span class="small">{@result.index}.</span>
+					<a href="{@result.href}" onclick="return _$(this)">{@result.title}</a> - 
+					<span class="small">{@result.category}</span>
+				</div>
+			</div>
+			<div class="content">{@result.contentSnippet}</div>
+		</div>
+		</a:loop>
+		<div class="bar">
+			<a:block name="pagination" />
+			{_("Total: :total results found.", {"%total": @module.total})}
+		</div>
+	</fieldset>
+	</a:loop>
+</a:block>
+	]]></search>
+</blocks>

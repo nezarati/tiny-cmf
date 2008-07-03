@@ -1,0 +1,28 @@
+.PhotoAlbum-coverFrame {
+	background: #D1D1D1 url(/img/module/album/loading.gif) no-repeat 100px 100px;
+	width: 144px;
+	height: 144px;
+	margin: 2px 0px 6px 2px;
+	position: relative;
+	-moz-box-shadow: 5px 5px 5px #666;
+	-webkit-box-shadow: 5px 5px 5px #666;
+	box-shadow: 5px 5px 5px #666;
+}
+.PhotoAlbum-photoFrame {
+	background: #F7F7F7 url(/img/module/album/loading.gif) no-repeat center;
+	width: 128px;
+	height: 96px;
+	border: 1px solid #CCC;
+}
+.PhotoAlbum-chooser {
+	overflow: auto;
+	height: 200px;
+	text-align: left;
+}
+.PhotoAlbum-chooser img {
+	border: 5px solid white;
+	cursor: pointer;
+}
+.PhotoAlbum-chooser img:hover {
+	border-color: #e5ecf9;
+}
