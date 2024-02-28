@@ -26,7 +26,7 @@ TinyCMF: a straightforward implementation of Lightweight CMF for PHP 5.3+
 - Link
 - Search
 
-# Mdoduls
+# Modules
 - WebAlbum
 - Shopping
 - News
